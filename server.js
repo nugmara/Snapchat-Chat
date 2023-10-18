@@ -21,8 +21,12 @@ const app = express()
 const server = createServer(app);
 const io = new Server(server);
 
-io.on("connection", () => {
-  console.log("A user has benn connected")
+io.on("connection", (socket) => {
+  console.log("A user has benn connected!")
+
+  socket.on("disconnect", () => {
+    console.log("An user has been disconnected")
+  })
 })
 
 // Add Vite or respective production middlewares
