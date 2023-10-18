@@ -1,5 +1,7 @@
 import fs from 'node:fs/promises'
 import express from 'express'
+import { Server } from "socket.io"
+import { createServer } from "node:http"
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -16,6 +18,12 @@ const ssrManifest = isProduction
 
 // Create http server
 const app = express()
+const server = createServer(app);
+const io = new Server(server);
+
+io.on("connection", () => {
+  console.log("A user has benn connected")
+})
 
 // Add Vite or respective production middlewares
 let vite
@@ -66,6 +74,6 @@ app.use('*', async (req, res) => {
 })
 
 // Start http server
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Server started at http://localhost:${port}`)
 })
