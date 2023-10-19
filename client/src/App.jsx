@@ -1,11 +1,17 @@
 import io from "socket.io-client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const socket = io("/");
 
 
 function App() {
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    socket.on("message", message => {
+      console.log(message)
+    }) 
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault()
