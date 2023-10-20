@@ -10,6 +10,7 @@ const io = new SocketServer(server, {
     connectionStateRecovery: true
 });
 
+dotenv.config()
 const db = createClient({
     url: "libsql://humble-master-chief-nugmara.turso.io",
     authToken: process.env.DB_TOKEN
