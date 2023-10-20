@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const socket = io("/");
 
-const Chat = () => {
+function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -42,7 +42,7 @@ const Chat = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Chat;
 

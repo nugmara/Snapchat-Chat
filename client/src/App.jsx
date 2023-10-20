@@ -2,26 +2,22 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Chat from "./pages/Chat";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
+import SignIn from "./auth/SignIn";
+import SignUp from "./auth/SignUp";
 
 function App() {
- 
-
   return (
     <Router>
-    <div>
+      <div>
+        <Nav />
 
-    
-      <Nav />
-    
         <Routes>
-        <Route path="/" element={<Home />}>
-
-        </Route>
-          <Route path="/chat" element={<Chat />}>
-
-          </Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/chat" element={<Chat />}></Route>
         </Routes>
-    </div>
+      </div>
     </Router>
   );
 }
