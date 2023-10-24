@@ -1,20 +1,15 @@
 // Initialization for ES Users
-import {
-    Input,
-    Ripple,
-    initTE,
-  } from "tw-elements";
-  
-  initTE({ Input, Ripple });
+import { Input, Ripple, initTE } from "tw-elements";
+
+initTE({ Input, Ripple });
 
 function SignUp() {
-
   return (
-    <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
+    <section className="gradient-form h-full bg-neutral-200 dark:white">
       <div className="container h-full p-10">
         <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
-            <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+            <div className="block rounded-lg bg-custom-green shadow-lg">
               <div className="g-0 lg:flex lg:flex-wrap">
                 {/* Left column container */}
                 <div className="px-4 md:px-0 lg:w-6/12">
@@ -32,7 +27,9 @@ function SignUp() {
                     </div>
 
                     <form>
-                      <p className="mb-4 font-semibold">Please log in to your account</p>
+                      <p className="mb-4 font-semibold">
+                        Please log in to your account
+                      </p>
                       {/* Username to your account */}
                       <div className="relative mb-4" data-te-input-wrapper-init>
                         <input
@@ -41,9 +38,7 @@ function SignUp() {
                           placeholder="Username"
                           onChange={(e) => e.target.value}
                         />
-                        <label
-                          className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text"
-                        >
+                        <label className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text">
                           Username
                         </label>
                       </div>
@@ -72,14 +67,19 @@ function SignUp() {
                           data-te-ripple-color="light"
                           style={{
                             background:
-                              "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
+                              "linear-gradient(to right, #ababab, #8d2663, #000000)",
                           }}
                         >
                           Log in
                         </button>
 
                         {/* Forgot password link */}
-                        <a href="#!" className="text-white font-normal hover:text-white">Forgot password?</a>
+                        <a
+                          href="#!"
+                          className="text-white font-normal hover:text-white"
+                        >
+                          Forgot password?
+                        </a>
                       </div>
 
                       {/* Register button */}
@@ -102,10 +102,10 @@ function SignUp() {
                   className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
                   style={{
                     background:
-                      "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
+                      "linear-gradient(to right, #ababab, #8d2663, #000000)",
                   }}
                 >
-                  <div className="px-4 py-6 text-white md:mx-6 d:p-12">
+                  <div className="px-4 py-6 text-white text-center flex flex-col items-center md:mx-6 d:p-12">
                     <h4 className="mb-6 text-xl font-semibold">
                       We are more than just ghosts
                     </h4>
@@ -115,6 +115,7 @@ function SignUp() {
                       incidunt temporibus minus, quae nemo quam magni laudantium
                       molestias, libero debitis. Suscipit, temporibus totam!
                     </p>
+                    {/* <img className="w-3/4" src="../../96073ad2ba1c974329380a694d68f839.jpg" alt="" /> */}
                   </div>
                 </div>
               </div>
