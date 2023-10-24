@@ -6,30 +6,33 @@
     border: 1px solid transparent;
     overflow: hidden;
     position: relative;
+    transition: 0.5s;
   }
-  
-  .custom-btn::before,
-  .custom-btn::after {
+
+  .custom-btn:after {
     content: "";
     position: absolute;
-    background: #fff;
-    width: 0;
     height: 100%;
-    transition: width 150ms ease-in-out;
-    z-index: -1;
-  }
-  
-  .custom-btn::before {
+    width: 100%;
+    top: 0;
     left: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 50%,
+        rgba(255, 255, 255, 0.03) 58%,
+        rgba(255, 255, 255, 0.16) 67%,
+        transparent 68%
+    );
+    background-size: 200% 100%;
+    background-position: 165% 0;
+    transition: 0.7s;
   }
-  
-  .custom-btn::after {
-    right: 0;
+
+  .custom-btn:hover:after {
+    background-position: -20% 0;
   }
-  
-  .custom-btn:hover::before,
-  .custom-btn:hover::after {
-    width: 50%;
-  }
+
+ 
+
   
   
