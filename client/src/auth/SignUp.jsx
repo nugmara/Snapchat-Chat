@@ -45,7 +45,7 @@ function SignUp() {
                           type="password"
                           className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not(data-te-input-placeholder-active])]:placeholder:opacity-0"
                           id="exampleFormControlInput1"
-                          placeholder="Password"
+                        //   placeholder="Password"
                         />
                         <label
                           htmlFor="exampleFormControlInput1"
@@ -70,7 +70,21 @@ function SignUp() {
                           Log in
                         </button>
 
-                        {/*  */}
+                        {/* Forgot password link */}
+                        <a href="#!">Forgot password?</a>
+                      </div>
+
+                      {/* Register button */}
+                      <div className="flex items-center justify-between pb-6">
+                        <p className="mb-0 mr-2">Don&apos;t have an account?</p>
+                        <button
+                          type="button"
+                          className="inline-block rounded border-2 border-red-500 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:border-red-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-red-600 focus:border-red-600 focus:text-red-600 focus:outline-none focus:ring-0 active:ring-0 active:border-red-700 active:text-red-700 dark:hover-bg-neutral-100 dark:hover:bg-opacity-10"
+                          data-te-ripple-init
+                          data-te-ripple-color="light"
+                        >
+                          Register
+                        </button>
                       </div>
                     </form>
                   </div>
