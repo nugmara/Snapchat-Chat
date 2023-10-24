@@ -1,4 +1,14 @@
+// Initialization for ES Users
+import {
+    Input,
+    Ripple,
+    initTE,
+  } from "tw-elements";
+  
+  initTE({ Input, Ripple });
+
 function SignUp() {
+
   return (
     <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
       <div className="container h-full p-10">
@@ -45,7 +55,7 @@ function SignUp() {
                           type="password"
                           className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not(data-te-input-placeholder-active])]:placeholder:opacity-0"
                           id="exampleFormControlInput1"
-                        //   placeholder="Password"
+                          //   placeholder="Password"
                         />
                         <label
                           htmlFor="exampleFormControlInput1"
@@ -87,6 +97,26 @@ function SignUp() {
                         </button>
                       </div>
                     </form>
+                  </div>
+                </div>
+                {/* Right column container with background and description */}
+                <div
+                  className="flex items-center rounded-b-lg lg:w:6/12 lg:rounded-r-lg lg:rounded-bl-none"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
+                  }}
+                >
+                  <div className="px-4 py-6 text-white md:mx-6 d:p-12">
+                    <h4 className="mb-6 text-xl font-semibold">
+                      We are more than just ghosts
+                    </h4>
+                    <p className="text-sm">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Deserunt soluta sequi omnis vitae repudiandae, eaque quod
+                      incidunt temporibus minus, quae nemo quam magni laudantium
+                      molestias, libero debitis. Suscipit, temporibus totam!
+                    </p>
                   </div>
                 </div>
               </div>
