@@ -24,7 +24,7 @@ function SignUp() {
                       <img
                         className="mx-auto w-48"
                         src="../../snapchat.svg"
-                        alt=""
+                        alt="logo"
                       />
                       <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
                         Phantom Pals
@@ -68,7 +68,7 @@ function SignUp() {
                       {/* Submit button */}
                       <div className="mb-12 pb-1 pt-1 text-center">
                         <button
-                          className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_9px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                          className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] custom-btn"
                           type="button"
                           data-te-ripple-init
                           data-te-ripple-color="light"
@@ -81,7 +81,7 @@ function SignUp() {
                         </button>
 
                         {/* Forgot password link */}
-                        <a href="#!">Forgot password?</a>
+                        <a href="#!" className="text-white font-normal hover:text-white">Forgot password?</a>
                       </div>
 
                       {/* Register button */}
@@ -101,7 +101,7 @@ function SignUp() {
                 </div>
                 {/* Right column container with background and description */}
                 <div
-                  className="flex items-center rounded-b-lg lg:w:6/12 lg:rounded-r-lg lg:rounded-bl-none"
+                  className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
                   style={{
                     background:
                       "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",

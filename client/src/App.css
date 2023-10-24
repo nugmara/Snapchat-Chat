@@ -2,4 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.custom-btn {
+    border: 1px solid transparent;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .custom-btn::before,
+  .custom-btn::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 100%;
+    transition: width 150ms ease-in-out;
+    z-index: -1;
+  }
+  
+  .custom-btn::before {
+    left: 0;
+  }
+  
+  .custom-btn::after {
+    right: 0;
+  }
+  
+  .custom-btn:hover::before,
+  .custom-btn:hover::after {
+    width: 50%;
+  }
+  
+  
