@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-btn {
+.custom-btn-login {
     border: 1px solid transparent;
     overflow: hidden;
     position: relative;
     transition: 0.5s;
   }
 
-  .custom-btn:after {
+  .custom-btn-login:after {
     content: "";
     position: absolute;
     height: 100%;
@@ -28,9 +28,39 @@
     transition: 0.7s;
   }
 
-  .custom-btn:hover:after {
+  .custom-btn-login:hover:after {
     background-position: -20% 0;
   }
+
+  .custom-btn-register {
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .custom-btn-register:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 50%,
+        rgba(255, 255, 255, 0.03) 58%,
+        rgba(255, 255, 255, 0.16) 67%,
+        transparent 68%
+    );
+    background-size: 200% 100%;
+    background-position: 165% 0;
+    transition: 0.7s;
+  }
+
+  .custom-btn-register:hover:after {
+    background-position: -20% 0;
+  }
+
 
  
 

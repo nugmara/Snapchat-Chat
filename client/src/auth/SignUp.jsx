@@ -68,7 +68,7 @@ function SignUp() {
                       {/* Submit button */}
                       <div className="mb-12 pb-1 pt-1 text-center">
                         <button
-                          className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] custom-btn"
+                          className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] custom-btn-login"
                           type="button"
                           data-te-ripple-init
                           data-te-ripple-color="light"
@@ -89,7 +89,7 @@ function SignUp() {
                         <p className="mb-0 mr-2">Don&apos;t have an account?</p>
                         <button
                           type="button"
-                          className="inline-block rounded border-2 border-red-500 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:border-red-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-red-600 focus:border-red-600 focus:text-red-600 focus:outline-none focus:ring-0 active:ring-0 active:border-red-700 active:text-red-700 dark:hover-bg-neutral-100 dark:hover:bg-opacity-10"
+                          className="inline-block rounded border-2 border-red-500 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:border-red-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-red-600 focus:border-red-600 focus:text-red-600 focus:outline-none focus:ring-0 active:ring-0 active:border-red-700 active:text-red-700 dark:hover-bg-neutral-100 dark:hover:bg-opacity-10 custom-btn-register"
                           data-te-ripple-init
                           data-te-ripple-color="light"
                         >
