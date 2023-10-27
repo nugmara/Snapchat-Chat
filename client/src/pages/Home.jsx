@@ -1,3 +1,4 @@
+// import SignUp from "../auth/SignUp"
 
 function Home() {
   return (
@@ -6,7 +7,7 @@ function Home() {
       <p className=" tfont-serif ext-xl text-white text-center absolute inset-x-0 top-6 tracking-widest">
         A <br /> Ghost <br /> Chat <br /> —
       </p>
-    {/* <SignUp /> */}
+     {/* <SignUp />  */}
     </div>
   );
 }

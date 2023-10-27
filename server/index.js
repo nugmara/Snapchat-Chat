@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import { createClient } from "@libsql/client";
 
 const app = express();
+app.use(express.json())
 const server = http.createServer(app);
 const io = new SocketServer(server, {
     connectionStateRecovery: true
