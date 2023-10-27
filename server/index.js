@@ -1,4 +1,6 @@
 import express from "express";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import http from "http";
 import { Server as SocketServer } from "socket.io"
 import dotenv from "dotenv";
@@ -10,7 +12,7 @@ const io = new SocketServer(server, {
     connectionStateRecovery: true
 });
 
-// dotenv.config()
+ dotenv.config()
 // const db = createClient({
 //     url: "libsql://humble-master-chief-nugmara.turso.io",
 //     authToken: process.env.DB_TOKEN
