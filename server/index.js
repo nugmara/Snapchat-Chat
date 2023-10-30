@@ -14,17 +14,32 @@ const io = new SocketServer(server, {
   connectionStateRecovery: true,
 });
 
-const db = createClient({
-  url: "libsql://humble-master-chief-nugmara.turso.io",
-  authToken: process.env.DB_TOKEN
-});
-await db.execute(`
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username VARCHAR(50) NOT NULL,
-        password VARCHAR(50) NOT NULL
-    )
-`)
+const setupDatabase = async () => {
+  const db = createClient({
+    url: "libsql://logical-wonder-man-nugmara.turso.io",
+    authToken: process.env.DB_TOKEN
+  });
+
+  try {
+
+    // Crear la tabla "users"
+    await db.execute(`
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username VARCHAR(50) NOT NULL,
+            password VARCHAR(50) NOT NULL
+        )
+    `)
+    console.log("Database and 'users' table are set up.")
+  } catch (error) {
+    console.log(error)
+  } 
+};
+
+// Llamar a la función de configuración de la base de datos
+setupDatabase();
+
+
 
 // Routes to create an new user
 app.post("/register", async (req, res) => {
@@ -45,19 +60,20 @@ if (!passwordRegex.test(password)) {
   });
 }
 
+// Validar si el usuario existe ya
+const existingUser = await db.query(
+  "SELECT * FROM users WHERE username = ?",
+  [username]
+);
+
+if (existingUser > 0) {
+  return res.status(400).json({ message: "El usuario ya existe" });
+}
+
+// Encriptar contraseña
+const hashedPassword = bcrypt.hash(password, 10);
+
   try {
-    // Validar si el usuario existe ya
-    const existingUser = await db.query(
-      "SELECT * FROM users WHERE username = ?",
-      [username]
-    );
-
-    if (existingUser > 0) {
-      return res.status(400).json({ message: "El usuario ya existe" });
-    }
-
-    // Encriptar contraseña
-    const hashedPassword = bcrypt.hash(password, 10);
 
     // Insertar el nuevo usuario en la base de datos
     const insertResult = await db.execute({
