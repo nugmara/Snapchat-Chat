@@ -1,9 +1,15 @@
 // Initialization for ES Users
+import { useState } from "react";
 import { Input, Ripple, initTE } from "tw-elements";
 
 initTE({ Input, Ripple });
 
 function SignUp() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+
   return (
     <section className="bg-transparent">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -27,6 +33,7 @@ function SignUp() {
                   id="text"
                   className="peer block min-h-[auto] w-full rounded border bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-200 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 dark:text-white"
                   placeholder="Username"
+                  onChange={(e) => setUsername(e.target.value)}
                 />
                 <label
                   htmlFor="email"
@@ -42,6 +49,7 @@ function SignUp() {
                   id="password"
                   name="password"
                   placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <label
                   htmlFor="password"
@@ -57,6 +65,7 @@ function SignUp() {
                   id="confirm-password"
                   name="confirm-password"
                   placeholder="Confirm Password"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
                 <label
                   htmlFor="confirm-password"
