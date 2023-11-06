@@ -14,8 +14,11 @@ const io = new SocketServer(server, {
   connectionStateRecovery: true,
 });
 
+// Declarar db en un alcance más amplio para que esté disponible en toda la aplicación
+let db;
+
 const setupDatabase = async () => {
-  const db = createClient({
+  db = createClient({
     url: "libsql://logical-wonder-man-nugmara.turso.io",
     authToken: process.env.DB_TOKEN
   });
@@ -45,6 +48,8 @@ setupDatabase();
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
 
+  console.log("Recibida solicitud de registro para el usuario:", username);
+
   // Validar que los campos no estén vacíos
   if (!username || !password) {
     return res
@@ -66,12 +71,12 @@ const existingUser = await db.query(
   [username]
 );
 
-if (existingUser > 0) {
+if (existingUser.length > 0) {
   return res.status(400).json({ message: "El usuario ya existe" });
 }
 
 // Encriptar contraseña
-const hashedPassword = bcrypt.hash(password, 10);
+const hashedPassword = await bcrypt.hash(password, 10);
 
   try {
 
@@ -83,6 +88,8 @@ const hashedPassword = bcrypt.hash(password, 10);
         password: hashedPassword,
       },
     });
+
+    console.log("Usuario registrado en la base de datos:", username);
   
     // Check insertResult for success
     if (insertResult.rowsAffected === 1) {
@@ -93,8 +100,15 @@ const hashedPassword = bcrypt.hash(password, 10);
     }
   } catch (error) {
     console.log(error);
+    res.status(500).json({ message: "Error interno del servidor" });
   }
 });
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ message: "Error interno del servidor" });
+});
+
 
 io.on("connection", (socket) => {
   console.log("Client connected");

@@ -13,6 +13,8 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Evita que el formulario se envíe por defecto
 
+    console.log("Datos del formulario - username:", username, "password:", password);
+
     try {
       // Realizar una solicitud al servidor para regoistrar al usuario
       const response = await axios.post("/register", {
@@ -44,7 +46,7 @@ function SignUp() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Create an account
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form className="space-y-4 md:space-y-6" method="POST" action="/register">
               <div className="relative mb-4" data-te-input-wrapper-init>
                 <input
                   type="text"
