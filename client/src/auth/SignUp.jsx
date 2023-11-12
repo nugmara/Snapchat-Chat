@@ -26,7 +26,7 @@ function SignUp() {
       // Manejar la respuesta del servidor (puede ser una confirmación de registro)
       console.log("Se ha registrado el usuario", response.data)
     } catch (error) {
-      console.log(e)
+      console.log(error)
     }
   }
 
